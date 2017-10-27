@@ -59,8 +59,8 @@ private ArrayList<Persona> pers;
 		return null; 
 		
 	}
-	public Persona getValidacionUsario(Persona u) throws Exception{
-		return dataPer.getValidacionUsario(u);
+	public Persona getValidacionUsario(Persona per) throws Exception{
+		return dataPer.getValidacionUsario(per);
 	}
 	
 	public ArrayList<Persona> getAll() throws Exception {

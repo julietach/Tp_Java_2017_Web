@@ -1,4 +1,4 @@
-package servlet;
+/*package servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -13,21 +13,21 @@ import entity.Persona;
 /**
  * Servlet implementation class Start
  */
-@WebServlet({ "/Start", "/start" })
+/*@WebServlet({ "/Start", "/start" })
 public class Start extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * Default constructor. 
      */
-    public Start() {
+/*    public Start() {
         // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
@@ -35,7 +35,7 @@ public class Start extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			String user=request.getParameter("user");
 			String pass=request.getParameter("pass");
@@ -43,7 +43,6 @@ public class Start extends HttpServlet {
 			Persona per=new Persona();
 			per.setUsuario(user);
 			per.setContraseña(pass);
-			System.out.println(user);
 			
 			CtrlABMCPersona ctrl= new CtrlABMCPersona();
 			
@@ -63,4 +62,4 @@ public class Start extends HttpServlet {
 		//doGet(request, response);
 	}
 
-}
+}*/

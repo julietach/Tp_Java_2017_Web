@@ -185,14 +185,14 @@ public void delete(Persona p){
 	
 	
 }
-public Persona getValidacionUsario(Persona usu) throws Exception{ 
+public Persona getValidacionUsario(Persona per) throws Exception{ 
 	Persona u = null ;
 	PreparedStatement stmt= null;
 	ResultSet rs=null;
 	try {
 		 stmt= FactoryConexion.getInstancia().getConn().prepareStatement( "select p.id_per, p.dni, p.nombre, p.apellido, p.email, p.usuario, p.contraseña, p.habilitado, p.id_cat, c.nombre_cat from persona p  inner join categoria c  on p.id_cat=c.id_cat where  p.usuario= ? and p.contraseña=? ");
-		 stmt.setString(1,usu.getUsuario());
-		 stmt.setString(2,usu.getContraseña());
+		 stmt.setString(1,per.getUsuario());
+		 stmt.setString(2,per.getContraseña());
 		 rs=stmt.executeQuery();
 		 if(rs!=null && rs.next()){
 			 u= new Persona();
@@ -200,7 +200,7 @@ public Persona getValidacionUsario(Persona usu) throws Exception{
 			 u.setId_per(rs.getInt("id_per"));
 				u.setNombre(rs.getString("nombre"));
 				u.setApellido(rs.getString("apellido"));
-				u.setDni(rs.getNString("dni"));
+				u.setDni(rs.getString("dni"));
 				u.setEmail(rs.getString("email"));
 				//u.setUsuario(rs.getString("usuario"));
 				//u.setContraseña(rs.getString("contraseña"));
