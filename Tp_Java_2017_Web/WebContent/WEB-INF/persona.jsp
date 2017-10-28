@@ -1,3 +1,6 @@
+<%@page import="controlers.CtrlABMCPersona"%>
+<%@page import="entity.Categoria"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,15 +21,25 @@
         <br><br><label for="inputNombre" class="sr-only">Nombre:</label>
         <input name="nombre" id="inputnombre" class="form-control" placeholder="" required="" type="">
       
-        <br><br><label for="inputApellido" class="sr-only">Apellido:</label>
+        <br><input type="checkbox"><br><label for="inputApellido" class="sr-only">Apellido:</label>
         <input name="apellido" id="inputapellido" class="form-control" placeholder="" required="" type=""><br><br>
      
         <label for="inputEmail" class="sr-only">Email:</label>
         <input name="email" id="inputemail" class="form-control" placeholder="" required="" type="">
       
-        <label for="inputCategoria" class="sr-only"><br><br>Categoria:</label>
-        <input name="categoria" id="inputcategoria class="form-control" placeholder="" required="" type="">
-     
+        <label for="inputCategoria" class="sr-only"><br><br>Categoria:</label> 
+        
+        <%CtrlABMCPersona ctrl=new CtrlABMCPersona();
+			ArrayList<Categoria> cats= new ArrayList<Categoria>();
+			cats=ctrl.getCategoria();
+		%>
+			<select>
+		<%	for(Categoria c : cats){%>
+			<option value="<%=c.getNombre_cat() %>"><%=c.getNombre_cat() %></option>
+		<%
+			}
+		%> 
+		</select>
 			<br><br><input type="checkbox">
 			<label for="inputHabilitado" class="sr-only">Habilitado</label>
 			

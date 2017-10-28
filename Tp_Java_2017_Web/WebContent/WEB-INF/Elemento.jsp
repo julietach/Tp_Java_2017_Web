@@ -1,3 +1,6 @@
+<%@page import="controlers.CtrlABMCElemento"%>
+<%@page import="entity.Elemento"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -15,8 +18,19 @@
         <label for="inputElemento" class="sr-only"> Elemento</label>
         <input name="elemento" id="inputelemento" class="form-control" placeholder="" required="" autofocus="" type="">
        
-        <br><br><label for="inputTipoDeElemento" class="sr-only">Tipo de elemento</label>
-        <input name="tipoDeElemento" id="inputtipoDeElemento" class="form-control" placeholder="" required="" type=""><br><br>
+        <br><br><label for="inputTipoDeElemento" class="sr-only">Tipo de elemento</label> 
+        <%CtrlABMCElemento ctrl=new CtrlABMCElemento();
+			ArrayList<Elemento> els= new ArrayList<Elemento>();
+			els=ctrl.getAll();
+		%><select style="width: 101px; ">
+		<%	for(Elemento e : els){%>
+			<option value="<%=e.getNombre_El() %>"><%=e.getNombre_El() %></option>
+		<%
+			}
+		%> 
+		</select><br>
+        
+			
     
       
         <button class="btn btn-agregar btn-primary btn-block" type="submit">Agregar</button>
@@ -25,8 +39,5 @@
     
       </form>
 
-
-<form>
-		khpshfkhpf <input>
-	</form></body>
+</body>
 </html>

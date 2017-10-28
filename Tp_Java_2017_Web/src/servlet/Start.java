@@ -47,12 +47,12 @@ public class Start extends HttpServlet {
 			CtrlABMCPersona ctrl1= new CtrlABMCPersona();
 			
 			Persona pers=ctrl1.getValidacionUsario(per);
-			CtrlABMCTipoElemento ctrl= new CtrlABMCTipoElemento();
-			request.setAttribute("listaTipoElementos", ctrl.getAll());
+			//CtrlABMCTipoElemento ctrl= new CtrlABMCTipoElemento();
+			request.setAttribute("listaPersonas", ctrl1.getAll());
 			
 			request.getSession().setAttribute("user", pers);
 			
-			request.getRequestDispatcher("WEB-INF/listadoTipoElementos.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/Elemento.jsp").forward(request, response);
 			//response.getWriter().append(user).append(" ").append(pass);
 			
 			
