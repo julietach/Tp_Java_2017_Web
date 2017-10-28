@@ -1,3 +1,6 @@
+<%@page import="controlers.*"%>
+<%@page import="entity.*"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,8 +15,22 @@
       <form class="form-signin" name="signin" action="start" method="post" style="height: 259px; ">
      
         <h2 class="form-signin-heading"> Reserva</h2>
-        
-        <br><br><label for="inputFecha" class="sr-only">fecha</label>
+        Tipo Elemento<%CtrlABMCTipoElemento ctrl=new CtrlABMCTipoElemento();
+			ArrayList<TipoElemento> tels= new ArrayList<TipoElemento>();
+			tels=ctrl.getAll();
+		%>
+			<select>
+		<%	for(TipoElemento te : tels){%>
+			<option value="<%=te.getNombre_TE() %>"><%=te.getNombre_TE() %></option>
+		<%
+			}
+		%> 
+		</select>
+        <br>
+        <br>Elemento<%
+		%>
+		<select></select><br>
+		<br><label for="inputFecha" class="sr-only">fecha</label>
         <input name="fecha" id="inputFecha" class="form-control" placeholder="aaaa/mm/dd" required="" type="">
        
         <br><br><label for="inputHora" class="sr-only">Hora</label>
