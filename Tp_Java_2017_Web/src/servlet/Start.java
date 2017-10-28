@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controlers.CtrlABMCPersona;
-import entity.Persona;
+import controlers.*;
+import entity.*;
 
 /**
  * Servlet implementation class Start
@@ -43,17 +43,16 @@ public class Start extends HttpServlet {
 			Persona per=new Persona();
 			per.setUsuario(user);
 			per.setContraseña(pass);
-			System.out.println(user);
 			
-			CtrlABMCPersona ctrl= new CtrlABMCPersona();
+			CtrlABMCPersona ctrl1= new CtrlABMCPersona();
 			
-			Persona pers=ctrl.getValidacionUsario(per);
-			
-			request.setAttribute("listaPersonas", ctrl.getAll());
+			Persona pers=ctrl1.getValidacionUsario(per);
+			CtrlABMCTipoElemento ctrl= new CtrlABMCTipoElemento();
+			request.setAttribute("listaTipoElementos", ctrl.getAll());
 			
 			request.getSession().setAttribute("user", pers);
 			
-			request.getRequestDispatcher("WEB-INF/welcome.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/listadoTipoElementos.jsp").forward(request, response);
 			//response.getWriter().append(user).append(" ").append(pass);
 			
 			
