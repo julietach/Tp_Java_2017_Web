@@ -15,7 +15,7 @@
       <form class="form-signin" name="signin" action="start" method="post" style="height: 259px; ">
      
         <h2 class="form-signin-heading"> Reserva</h2>
-        Tipo Elemento<%CtrlABMCTipoElemento ctrl=new CtrlABMCTipoElemento();
+        ID <input><br>Tipo Elemento<%CtrlABMCTipoElemento ctrl=new CtrlABMCTipoElemento();
 			ArrayList<TipoElemento> tels= new ArrayList<TipoElemento>();
 			tels=ctrl.getAll();
 		%>

@@ -15,7 +15,7 @@
       <form class="form-signin" name="PER" action="Personas" method="post">
      
         <h2 class="form-signin-heading"> Persona</h2>
-        <label for="inputdni" class="sr-only">DNI</label>
+        ID   <input><br><label for="inputdni" class="sr-only">DNI</label>
         <input name="tipodni" id="inputdni" class="form-control" placeholder="" required="" autofocus="" type=""> 
         <button class="btn btn-agregar btn-primary btn-block" type="submit">Buscar</button>
         <br><br><label for="inputNombre" class="sr-only">Nombre:</label>

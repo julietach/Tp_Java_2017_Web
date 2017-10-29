@@ -15,7 +15,7 @@
       <form class="form-signin" name="signin" action="start" method="post">
       
         <h2 class="form-signin-heading">  Elemento</h2>
-        <label for="inputElemento" class="sr-only"> Elemento</label>
+			 ID <label for="inputElemento" class="sr-only"><input><br><br> Elemento</label>
         <input name="elemento" id="inputelemento" class="form-control" placeholder="" required="" autofocus="" type="">
        
         <br><br><label for="inputTipoDeElemento" class="sr-only">Tipo de elemento</label> 
@@ -28,7 +28,7 @@
 		<%
 			}
 		%> 
-		</select><br>
+		</select><br><br>
         
 			
     
