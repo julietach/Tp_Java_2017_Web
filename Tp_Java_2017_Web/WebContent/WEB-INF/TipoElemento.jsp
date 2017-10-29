@@ -13,7 +13,7 @@
       <form class="form-signin" name="signin" action="start" method="post" style="height: 259px; ">
      
         <h2 class="form-signin-heading"> Tipo de Elemento</h2>
-        <label for="inputTipoElemento" class="sr-only">Tipo de elemento</label>
+        ID <label for="inputTipoElemento" class="sr-only"><input><br><br>Tipo de elemento</label>
         <input name="tipoDeElemento" id="inputTipoElemento" class="form-control" placeholder="" required="" autofocus="" type="">
        
         <br><br><label for="inputCantReserva" class="sr-only">Cant. de reserva maxima</label>

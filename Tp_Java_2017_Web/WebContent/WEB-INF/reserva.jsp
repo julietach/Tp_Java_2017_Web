@@ -19,7 +19,7 @@
 			ArrayList<TipoElemento> tels= new ArrayList<TipoElemento>();
 			tels=ctrl.getAll();
 		%>
-			<select>
+			<select name="elementos">
 		<%	for(TipoElemento te : tels){%>
 			<option value="<%=te.getNombre_TE() %>"><%=te.getNombre_TE() %></option>
 		<%

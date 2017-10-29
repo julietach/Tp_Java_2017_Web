@@ -17,11 +17,11 @@
         <h2 class="form-signin-heading"> Persona</h2>
         ID   <input><br><label for="inputdni" class="sr-only">DNI</label>
         <input name="tipodni" id="inputdni" class="form-control" placeholder="" required="" autofocus="" type=""> 
-        <button class="btn btn-agregar btn-primary btn-block" type="submit">Buscar</button>
+        <button class="btn btn-agregar btn-primary btn-block" type="submit" name="btnBuscar">Buscar</button>
         <br><br><label for="inputNombre" class="sr-only">Nombre:</label>
         <input name="nombre" id="inputnombre" class="form-control" placeholder="" required="" type="">
       
-        <br><input type="checkbox"><br><label for="inputApellido" class="sr-only">Apellido:</label>
+        <br><br><label for="inputApellido" class="sr-only">Apellido:</label>
         <input name="apellido" id="inputapellido" class="form-control" placeholder="" required="" type=""><br><br>
      
         <label for="inputEmail" class="sr-only">Email:</label>
@@ -43,10 +43,10 @@
 			<br><br><input type="checkbox">
 			<label for="inputHabilitado" class="sr-only">Habilitado</label>
 			
-        <br><br><button class="btn btn-agregar btn-primary btn-block" type="submit">Agregar</button>
-        <button class="btn btn-modificar btn-primary btn-block" type="submit">Modificar</button>
-        <button class="btn btn-borrar btn-primary btn-block" type="submit">Borrar</button>
-        
+        <br><br><button class="btn btn-agregar btn-primary btn-block" type="submit" name="btnAgregar">Agregar</button>
+        <button class="btn btn-modificar btn-primary btn-block" type="submit" name="btnModificar" >Modificar</button>
+        <button class="btn btn-borrar btn-primary btn-block" type="submit" name="btnBorrar" >Borrar</button>
+      
       </form>
 
     </div> <!-- /container -->
