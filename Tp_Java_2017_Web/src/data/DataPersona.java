@@ -91,16 +91,16 @@ public class DataPersona implements Serializable{
     	PreparedStatement stmt=null;
     	ResultSet keyResultSet=null;
     	try{ stmt=FactoryConexion.getInstancia().getConn().prepareStatement(
-				"insert into persona(dni, nombre, apellido, email, usuario, contraseña,  habilitado, id_cat) " +
-				 "values (?,?,?,?,?,?,?,?)",PreparedStatement.RETURN_GENERATED_KEYS);
+				"insert into persona(dni, nombre, apellido, email) " +
+				 "values (?,?,?,?)",PreparedStatement.RETURN_GENERATED_KEYS);
     		  stmt.setString(1,p.getDni());
     		  stmt.setString(2,p.getNombre());
     		  stmt.setString(3,p.getApellido());
     		  stmt.setString(4,p.getEmail());
-    		  stmt.setString(5,p.getUsuario());
-    		  stmt.setString(6,p.getContraseña());
-    		  stmt.setBoolean(7,p.isHabilitado());
-    		  stmt.setInt(8,p.getCategoria().getId_cat());
+    		  //stmt.setString(5,p.getUsuario());
+    		  //stmt.setString(6,p.getContraseña());
+    		  //stmt.setBoolean(7,p.isHabilitado());
+    		  //stmt.setInt(8,p.getCategoria().getId_cat());
     		  stmt.executeUpdate();
     		  keyResultSet=stmt.getGeneratedKeys();
     		  if (keyResultSet!=null && keyResultSet.next()){
