@@ -73,11 +73,13 @@ public class abmcPerServlet extends HttpServlet {
 			per.setDni(dni);
 			CtrlABMCPersona ctrl= new CtrlABMCPersona();
 			Persona pers=ctrl.getByDni(per);
+			request.setAttribute("persona", pers);
 	
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		response.getWriter().append("Consulta, requested action: ").append(request.getPathInfo()).append(" through post");
+		//en lugar del response.getWriter usar el forward del ejemplo de start / welcome
 		//crear el controlador y ejecutar el getOne o getById
 	}
 
@@ -94,16 +96,26 @@ public class abmcPerServlet extends HttpServlet {
 	private void alta(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		//CtrlABMCPersona ctrl = (CtrlABMCPersona)request.getSession().getAttribute("ctrl");
 		  try {
-			  Persona per=new Persona();
+			    CtrlABMCPersona ctrl= new CtrlABMCPersona();
+			    Persona per=new Persona();
 				per.setDni(request.getParameter("dni"));
 				per.setNombre(request.getParameter("nombre"));
 				per.setApellido(request.getParameter("apellido"));
 				per.setEmail(request.getParameter("email"));
+				int id_cat=Integer.parseInt(request.getParameter("categoria"));
+				per.setCategoria(ctrl.getById(id_cat));
+				per.setHabilitado(request.getParameter("habilitado").equals("on"));
+				per.setUsuario(request.getParameter("usuario"));
+				per.setContraseña(request.getParameter("contraseña"));
+				/*
+				 * 1- guardar la categoria id en una variabe
+				 * 2- buscar la categoria de ese id mediante un controlador getById
+				 * 3- guardar el objeto categoria recuperado en per con setCategoria 
+				 */
 				//select
 				//checkbox
 				//user,pass
 				//categoria
-				CtrlABMCPersona ctrl= new CtrlABMCPersona();
 				ctrl.add(per);
 				//tratar de poner cartel
 				response.getWriter().append("Alta, requested action: ").append(request.getPathInfo()).append(" through post");

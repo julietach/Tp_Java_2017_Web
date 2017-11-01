@@ -70,4 +70,7 @@ private ArrayList<Persona> pers;
 	public ArrayList<Categoria> getCategoria() throws Exception{
 		return dataCat.getAll();
 	}
+	public Categoria getById(int id_cat) throws Exception{
+		return dataCat.getById(id_cat);
+	}
 }

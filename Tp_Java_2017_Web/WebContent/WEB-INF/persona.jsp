@@ -62,14 +62,14 @@
 			ArrayList<Categoria> cats= new ArrayList<Categoria>();
 			cats=ctrl.getCategoria();
 		%>
-			<select>
+			<select name="categoria" id="inputcategoria">
 		<%	for(Categoria c : cats){%>
 			<option value="<%=c.getId_cat() %>"><%=c.getNombre_cat() %></option>
 		<%
 			}
 		%> 
 		</select>
-			<br><br><input type="checkbox">
+			<br><br><input type="checkbox" name="habilitado" id="inputhabilitado">
 			<label for="inputHabilitado" class="sr-only">Habilitado</label>
 		  
         <button class="btn btn-lg " onclick="javascript: submitForm('persona/alta')">Agregar</button>
